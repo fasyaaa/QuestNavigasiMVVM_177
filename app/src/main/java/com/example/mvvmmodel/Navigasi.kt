@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mvvmmodel.model.ListGender
+import com.example.mvvmmodel.ui.view.DetailMahasiswaView
 import com.example.mvvmmodel.ui.view.FormMahasiswaView
 import com.example.mvvmmodel.ui.viewmodel.MahasiswaViewModel
 
@@ -45,7 +46,9 @@ fun Navigasi(
                 )
             }
             composable(route = Halaman.Data.name){
+                DetailMahasiswaView(
 
+                )
             }
         }
     }
