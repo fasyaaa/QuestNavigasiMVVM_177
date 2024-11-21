@@ -14,7 +14,8 @@ import com.example.mvvmmodel.model.Mahasiswa
 @Composable
 fun DetailMahasiswaView(
     dataMhs: Mahasiswa,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onBackClick: () -> Unit = {}
 ){
     val listDataMahasiswa = listOf(
         Pair("Nama", dataMhs.nama),
