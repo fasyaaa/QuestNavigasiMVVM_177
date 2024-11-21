@@ -44,6 +44,9 @@ fun Navigasi(
                     }
                 )
             }
+            composable(route = Halaman.Data.name){
+
+            }
         }
     }
 }
