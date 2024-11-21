@@ -19,39 +19,40 @@ import com.example.mvvmmodel.ui.viewmodel.MahasiswaViewModel
 
 enum class Halaman{
     Form,
-    Data
+    Detail
 }
 
 @Composable
 fun Navigasi(
     modifier: Modifier = Modifier,
     viewModel: MahasiswaViewModel = viewModel(),
-    navHost: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController()
 ){
     Scaffold { isipadding ->
         val uiState by viewModel.dataModel.collectAsState()
+
         NavHost(
             modifier = modifier.padding(isipadding),
-            navController = navHost, startDestination = Halaman.Form.name
+            navController = navController, startDestination = Halaman.Form.name,
         )
         {
             composable(route = Halaman.Form.name){
                 val konteks = LocalContext.current
                 FormMahasiswaView(
                     listGender = ListGender.listGender.map {
-                        isi -> konteks.resources.getString(isi)
+                        id -> konteks.resources.getString(id)
                     },
                     onSubmitClick = {
                         viewModel.saveDataMhs(it)
-                        navHost.navigate(Halaman.Data.name)
+                        navController.navigate(Halaman.Detail.name)
                     }
                 )
             }
-            composable(route = Halaman.Data.name){
+            composable(route = Halaman.Detail.name){
                 DetailMahasiswaView(
                     dataMhs = uiState,
                     onBackClick = {
-                        navHost.popBackStack()
+                        navController.popBackStack()
                     }
                 )
             }

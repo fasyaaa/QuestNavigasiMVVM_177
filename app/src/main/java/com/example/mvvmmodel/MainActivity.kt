@@ -19,9 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MVVMmodelTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Navigasi(modifier = Modifier.padding(innerPadding))
-                }
+                Navigasi()
             }
         }
     }

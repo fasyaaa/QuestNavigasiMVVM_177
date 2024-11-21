@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -13,9 +14,9 @@ import com.example.mvvmmodel.model.Mahasiswa
 
 @Composable
 fun DetailMahasiswaView(
-    dataMhs: Mahasiswa,
     modifier: Modifier = Modifier,
-    onBackClick: () -> Unit = {}
+    dataMhs: Mahasiswa,
+    onBackClick: () -> Unit
 ){
     val listDataMahasiswa = listOf(
         Pair("NIM", dataMhs.nim),
@@ -34,6 +35,11 @@ fun DetailMahasiswaView(
         listDataMahasiswa.forEach{data ->
             DetailMhs(judul = data.first,
                 Isinya = data.second)
+        }
+        ElevatedButton(
+            onClick = onBackClick ,modifier = Modifier.padding(top = 16.dp)
+        ) {
+            Text(text = "Back")
         }
     }
 }

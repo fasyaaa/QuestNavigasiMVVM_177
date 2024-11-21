@@ -47,7 +47,7 @@ fun FormMahasiswaView(
     var memilihJk by remember { mutableStateOf("") }
 
     val listData: MutableList<String> = mutableListOf(
-        nama, memilihJk, alamat, email, noTelpon
+        nim ,nama, memilihJk, alamat, email, noTelpon
     )
 
     Column(modifier = modifier
