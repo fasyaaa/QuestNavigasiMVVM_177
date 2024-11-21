@@ -14,3 +14,12 @@ enum class Halaman{
     Form,
     Data
 }
+
+@Composable
+fun Navigasi(
+    modifier: Modifier = Modifier,
+    viewModel: MahasiswaViewModel = viewModel(),
+    navHost: NavHostController = rememberNavController()
+){
+
+}
