@@ -39,6 +39,7 @@ fun FormMahasiswaView(
     onSubmitClick: (MutableList<String>) -> Unit
 
 ){
+    var nim by remember { mutableStateOf("") }
     var nama by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var noTelpon by remember { mutableStateOf("") }
@@ -59,6 +60,15 @@ fun FormMahasiswaView(
             fontWeight = FontWeight.Bold )
 
         Spacer(Modifier.padding(16.dp))
+        TextField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp),
+            value = nim,
+            onValueChange = {nim = it},
+            label = { Text("NIM")},
+            placeholder = { Text("Masukkan NIM Anda")}
+        )
         TextField(
             modifier = Modifier
                 .fillMaxWidth()
