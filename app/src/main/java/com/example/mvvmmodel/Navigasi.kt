@@ -21,5 +21,14 @@ fun Navigasi(
     viewModel: MahasiswaViewModel = viewModel(),
     navHost: NavHostController = rememberNavController()
 ){
+    Scaffold { isipadding ->
+        val uiState by viewModel.uistate.collectAsState()
+        NavHost(
+            modifier = modifier.padding(isipadding),
+            navController = navHost, startDestination = Halaman.Form.name
+        )
+        {
 
+        }
+    }
 }
